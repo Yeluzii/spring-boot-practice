@@ -1,2 +1,5 @@
-package top.ychen.springboot.quickstart.enums;public class RequestType {
+package top.ychen.springboot.quickstart.enums;
+
+public enum RequestType {
+    QUERY, COMPLAINT, SUGGESTIONS
 }
