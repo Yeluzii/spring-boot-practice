@@ -4,11 +4,21 @@ public class User {
     private Long id;
     private String name;
     private String email;
+    private int age;
 
-    public User(Long id, String name, String email) {
+    public User(Long id, int age,String name, String email) {
         this.id = id;
+        this.age = age;
         this.name = name;
         this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public Long getId() {

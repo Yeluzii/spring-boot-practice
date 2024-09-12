@@ -20,9 +20,9 @@ public class UserController {
     }
 
     @PostMapping("/addUser")
-    public String addUser(@RequestParam String name, @RequestParam String email) {
+    public String addUser(@RequestParam int age,@RequestParam String name, @RequestParam String email) {
         Long id = (long) (users.size() + 1);
-        User user = new User(id, name,email);
+        User user = new User(id,age, name,email);
         users.add(user);
         return "redirect:/userList";
     }
