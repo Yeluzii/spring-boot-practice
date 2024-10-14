@@ -14,6 +14,7 @@ import top.ychen.springboot.mp.service.StudentService;
 public class StudentController {
     private final StudentService studentService;
 
+
     @GetMapping("/{id}/courses")
     public Student getStudentWithCourses(@PathVariable Long id) {
         return studentService.getStudentWithCourses(id);
