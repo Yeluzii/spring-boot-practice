@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.ychen.springboot.database.mapper.StudentMapper">
+    <insert id="insert" parameterType="Student">
+        insert into t_student(clazz_id, student_name, hometown, birthday)
+        values (#{clazzId}, #{studentName}, #{hometown}, #{birthday})
+    </insert>
+
+    <select id="findStudentById" resultType="Student">
+        select *
+        from t_student
+        where student_id = #{studentId}
+    </select>
+
+    <update id="updateById" parameterType="Student">
+        update t_student
+        <set>
+            <if test="clazzId != null">class_id = #{clazzId}</if>
+            <if test="studentName != null">student_name = #{studentName}</if>
+            <if test="hometown != null">hometown = #{hometown}</if>
+            <if test="birthday != null">birthday = #{birthday}</if>
+        </set>
+        where student_id = #{studentId}
+    </update>
+
+    <delete id="deleteById" parameterType="int">
+        delete
+        from t_student
+        where student_id = #{studentId}
+    </delete>
+
+    <insert id="batchInsert" parameterType="Student">
+        insert into t_student values
+        <foreach collection="students" item="student" index="index" separator=",">
+            (#{student.studentId},#{student.clazzId}, #{student.studentName}, #{student.hometown}, #{student.birthday})
+        </foreach>
+    </insert>
+
+    <delete id="batchDelete" parameterType="int">
+        delete from t_student
+        where student_id in
+        <foreach collection="idList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <select id="selectByDynamicSql" resultType="top.ychen.springboot.database.entity.Student">
+        select *
+        from t_student
+        <where>
+            <if test="studentId != null">and student_id = #{studentId}</if>
+            <if test="clazzId != null">and class_id = #{clazzId}</if>
+            <if test="studentName != null">and student_name like concat('%',#{studentName},'%')</if>
+            <if test="hometown != null">and hometown like concat('%',#{hometown},'%')</if>
+            <if test="birthday != null">and birthday = #{birthday}</if>
+        </where>
+    </select>
+
+    <update id="batchUpdate" parameterType="java.util.List">
+        <foreach collection="students" item="student" index="index" separator=";">
+            UPDATE t_student SET
+            <if test="student.clazzId != null">
+                clazz_id = #{student.clazzId}
+            </if>
+            <if test="student.studentName != null">
+                student_name = #{student.studentName}
+            </if>
+            <if test="student.birthday != null">
+                birthday = #{student.birthday}
+            </if>
+            <if test="student.hometown != null">
+                hometown = #{student.hometown}
+            </if>
+            WHERE student_id = #{student.studentId}
+        </foreach>
+
+    </update>
+
+    <resultMap id="studentMap" type="Student">
+        <id column="student_id" property="studentId" />
+        <result column="student_name" property="studentName" />
+        <result column="hometown" property="hometown" />
+        <result column="birthday" property="birthday" />
+        <association property="clazz" javaType="Clazz">
+            <id column="clazz_id" property="clazzId" />
+            <result column="clazz_name" property="clazzName" />
+        </association>
+        <collection property="courses" ofType="Course">
+            <id column="course_id" property="courseId" />
+            <result column="course_name" property="courseName" />
+        </collection>
+    </resultMap>
+    <select id="getStudentManyToOne" resultMap="studentMap">
+        SELECT s.student_id,s.student_name,s.hometown,s.birthday,c.clazz_id,c.clazz_name
+        FROM t_student s,
+             t_clazz c
+        WHERE s.clazz_id = c.clazz_id
+        AND s.student_id = #{studentId}
+    </select>
+    <select id="getStudent" resultMap="studentMap" parameterType="int">
+        SELECT s.student_id,s.student_name,s.hometown,s.birthday,c.clazz_id,c.clazz_name,cc.course_id,cc.course_name
+        FROM t_student s
+        LEFT JOIN t_clazz c ON s.clazz_id = c.clazz_id
+        LEFT JOIN t_course_student ts ON s.student_id = ts.student_id
+        LEFT JOIN t_course cc ON ts.course_id = cc.course_id
+        WHERE s.student_id = #{studentId}
+    </select>
+
+</mapper>

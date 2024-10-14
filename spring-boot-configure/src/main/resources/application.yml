@@ -60,8 +60,10 @@ custom:
 spring:
   mail:
     host: smtp.qq.com
-    username: 2317413623@qq.com
-    password: gdvdgggdiikuecie
+#    username: 2317413623@qq.com
+#    password: gdvdgggdiikuecie
+    username: 1475806894@qq.com
+    password: dxezifdicydohdba
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true

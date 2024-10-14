@@ -8,9 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-boot-thymeleaf" />
-        <module name="my-zhihu-api" />
+        <module name="spring-boot-database" />
         <module name="spring-boot-logging" />
         <module name="spring-boot-configure" />
+        <module name="spring-boot-mp" />
+        <module name="my-zhihu-api" />
         <module name="spring-boot-quickstart" />
       </profile>
     </annotationProcessing>
@@ -23,7 +25,9 @@
       <module name="my-zhihu-api" options="-parameters" />
       <module name="spring-boot-configure" options="-parameters" />
       <module name="spring-boot-configure1" options="-parameters" />
+      <module name="spring-boot-database" options="-parameters" />
       <module name="spring-boot-logging" options="-parameters" />
+      <module name="spring-boot-mp" options="-parameters" />
       <module name="spring-boot-practice" options="" />
       <module name="spring-boot-quickstart" options="-parameters" />
       <module name="spring-boot-thymeleaf" options="-parameters" />
