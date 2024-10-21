@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/spring-boot-configure1/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-database/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-mp/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-exception/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

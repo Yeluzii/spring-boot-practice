@@ -7,3 +7,5 @@
 - spring-boot-database: 数据库模块
 - spring-boot-mp: Mybatis-Plus 模块
 - my-zhihu-api: 仿知乎联调后端模块
+- spring-boot-exception: 自定义异常模块
+- spring-boot-redis: Redis 模块

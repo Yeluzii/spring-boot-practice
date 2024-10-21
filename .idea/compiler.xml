@@ -9,6 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-boot-thymeleaf" />
         <module name="spring-boot-database" />
+        <module name="spring-boot-exception" />
+        <module name="spring-boot-redis" />
         <module name="spring-boot-logging" />
         <module name="spring-boot-configure" />
         <module name="spring-boot-mp" />
@@ -26,10 +28,12 @@
       <module name="spring-boot-configure" options="-parameters" />
       <module name="spring-boot-configure1" options="-parameters" />
       <module name="spring-boot-database" options="-parameters" />
+      <module name="spring-boot-exception" options="-parameters" />
       <module name="spring-boot-logging" options="-parameters" />
       <module name="spring-boot-mp" options="-parameters" />
       <module name="spring-boot-practice" options="" />
       <module name="spring-boot-quickstart" options="-parameters" />
+      <module name="spring-boot-redis" options="-parameters" />
       <module name="spring-boot-thymeleaf" options="-parameters" />
     </option>
   </component>
