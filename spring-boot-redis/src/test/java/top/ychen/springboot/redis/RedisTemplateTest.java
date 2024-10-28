@@ -21,7 +21,7 @@ public class RedisTemplateTest {
     @Test
     public void test01() {
         stringRedisTemplate.opsForValue().set("hello", "world",60, TimeUnit.SECONDS);
-        System.out.println(stringRedisTemplate.opsForValue().get("name"));
+        System.out.println(stringRedisTemplate.opsForValue().get("hello"));
     }
 
     @Test
