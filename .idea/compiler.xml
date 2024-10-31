@@ -15,6 +15,7 @@
         <module name="spring-boot-logging" />
         <module name="spring-boot-configure" />
         <module name="spring-boot-mp" />
+        <module name="spring-boot-file" />
         <module name="my-zhihu-api" />
         <module name="spring-boot-quickstart" />
       </profile>
@@ -30,6 +31,7 @@
       <module name="spring-boot-configure1" options="-parameters" />
       <module name="spring-boot-database" options="-parameters" />
       <module name="spring-boot-exception" options="-parameters" />
+      <module name="spring-boot-file" options="-parameters" />
       <module name="spring-boot-logging" options="-parameters" />
       <module name="spring-boot-mp" options="-parameters" />
       <module name="spring-boot-practice" options="" />

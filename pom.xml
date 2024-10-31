@@ -23,6 +23,7 @@
         <module>spring-boot-configure</module>
         <module>spring-boot-redis</module>
         <module>spring-boot-task</module>
+        <module>spring-boot-file</module>
     </modules>
     <properties>
         <java.version>17</java.version>
