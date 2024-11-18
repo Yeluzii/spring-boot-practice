@@ -1,0 +1,19 @@
+logging:
+  level:
+    root: info
+
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+# 阿里云密钥
+aliyun:
+  oss:
+    endpoint: sads
+    bucket-name: sada
+    access-key-id: sfad
+    access-key-secret: sada

@@ -1,0 +1,30 @@
+spring:
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always
+
+  mail:
+    host: smtp.qq.com
+    username: 2317413623@qq.com
+    password: gdvdgggdiikuecie
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_boot?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+
+logging:
+  level:
+    com.baomidou.mybatisplus.samples: debug
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: top.ychen.springboot.task.entity
